@@ -2,8 +2,8 @@
  * @Description:
  * @Author: Hexon
  * @Date: 2021-08-25 16:42:09
- * @LastEditors: Hexon
- * @LastEditTime: 2021-11-18 23:24:57
+ * @LastEditors: Zhang jie
+ * @LastEditTime: 2021-11-24 19:37:03
  */
 
 const baseConfig = require('./webpack.base');
@@ -16,7 +16,7 @@ const eslintPluginOptions = {
 };
 const config = merge(baseConfig, {
   devServer: {
-    port: 8001,
+    port: 'auto',
     hot: true,
     compress: true,
     static: './dist',
