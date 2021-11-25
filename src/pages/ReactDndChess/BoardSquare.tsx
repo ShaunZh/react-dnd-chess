@@ -3,7 +3,7 @@
  * @Author: Zhang jie
  * @Date: 2021-11-25 10:49:09
  * @LastEditors: Zhang jie
- * @LastEditTime: 2021-11-25 13:58:09
+ * @LastEditTime: 2021-11-25 15:08:02
  */
 import React from 'react';
 import Square from './Square';
@@ -28,6 +28,8 @@ export default function BoardSquare({ x, y, children }: Props): React.ReactEleme
   const [{ isOver, canDrop }, drop] = useDrop(() => ({
     accept: ItemTypes.KNIGHT,
     canDrop: () => canMoveKnight(x, y),
+    // 当拖拽的组件放下(drop)时，执行该函数，可以返回undefined或对象，该返回值可以在useDrag的endDrag方法中被访问
+    // 详细情况参考(文档)
     drop: () => moveKnight(x, y),
     collect: monitor => ({
       isOver: !!monitor.isOver(),
